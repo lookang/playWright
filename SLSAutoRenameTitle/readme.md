@@ -170,6 +170,3 @@ You've now created a Playwright script to automate SLS platform interactions. Th
 
 Ensure you have proper authorization before automating interactions with any platform.
 
-## License
-
-[Insert appropriate license here]
