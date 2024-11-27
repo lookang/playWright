@@ -1,3 +1,34 @@
+# Automating SLS Login and Updating MOE Modules with Playwright: A Beginner's Guide
+
+This guide will help you set up and run a Playwright script to automate logging into the SLS platform and updating module titles. It is designed for beginners and provides step-by-step instructions to get the script running on your computer.
+
+---
+
+## Table of Contents
+1. [Step 1: Install Node.js](#step-1-install-nodejs)
+2. [Step 2: Set Up a New Project](#step-2-set-up-a-new-project)
+3. [Step 3: Prepare a CSV File](#step-3-prepare-a-csv-file)
+4. [Step 4: Write the Automation Script](#step-4-write-the-automation-script)
+5. [Step 5: Run the Script](#step-5-run-the-script)
+6. [Step 6: Troubleshooting](#step-6-troubleshooting)
+7. [Optional Enhancements](#optional-enhancements)
+8. [Conclusion](#conclusion)
+
+---
+
+## Step 1: Install Node.js
+
+Playwright requires Node.js to run. Follow these steps to install it:
+
+1. Go to the [Node.js official website](https://nodejs.org/).
+2. Download the **LTS version** (recommended for most users).
+3. Run the installer and follow the instructions.
+4. Verify the installation by opening a terminal and typing:
+
+   ```bash
+   node -v
+   npm -v
+
 Automating SLS Login and Change Title of MOE modules with Playwright: A Beginner's Guide
 This guide will help you set up and run a Playwright script to automate logging into the SLS platform. It is designed for beginners and provides step-by-step instructions to get the script running on your own computer.
 
