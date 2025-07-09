@@ -143,28 +143,75 @@ Common issues:
                 try {
                     const { execSync } = require('child_process');
                     
-                    // Install browsers
-                    await this.log('Running: npx playwright install chromium');
-                    execSync('npx playwright install chromium', { 
-                        stdio: 'inherit',
-                        timeout: 300000 // 5 minutes timeout
-                    });
+                    // Try different installation approaches for SSOE/restricted environments
+                    const installCommands = [
+                        'npx playwright install chromium',
+                        'npx playwright install chromium --with-deps',
+                        'npm exec playwright install chromium',
+                        'node_modules\\.bin\\playwright install chromium'
+                    ];
                     
-                    await this.log('Browser installation completed. Retrying browser launch...');
+                    let installSuccess = false;
+                    let lastError = null;
+                    
+                    for (const command of installCommands) {
+                        try {
+                            await this.log(`Trying: ${command}`);
+                            execSync(command, { 
+                                stdio: 'pipe',
+                                timeout: 300000, // 5 minutes timeout
+                                env: { ...process.env, PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '0' }
+                            });
+                            installSuccess = true;
+                            await this.log(`Browser installation completed with: ${command}`);
+                            break;
+                        } catch (cmdError) {
+                            lastError = cmdError;
+                            await this.log(`Command failed: ${command}`, 'WARN');
+                            continue;
+                        }
+                    }
+                    
+                    if (!installSuccess) {
+                        throw new Error(`All installation methods failed. Last error: ${lastError.message}`);
+                    }
                     
                     // Retry browser launch
                     this.browser = await chromium.launch({
                         headless: config.settings.headless,
                         slowMo: config.settings.slowMo
                     });
+                    
                 } catch (installError) {
+                    // Enhanced error message with SSOE-specific guidance
                     throw new Error(`
 ❌ Failed to install Playwright browsers automatically.
 
-Please run this command manually and try again:
-npx playwright install
+🏫 SSOE/School Network Users:
+Your network may have restrictions that prevent automatic browser downloads.
 
-Error details: ${installError.message}
+📋 Manual Setup Options:
+
+Option 1 - Try manual command:
+1. Open Command Prompt as Administrator
+2. Navigate to the folder containing this executable
+3. Run: npx playwright install
+4. Run the automation again
+
+Option 2 - Use portable browser:
+1. Download portable Chrome/Chromium
+2. Contact IT support for browser installation assistance
+
+Option 3 - Run on personal device:
+1. Use this tool on a personal computer with internet access
+2. Or ask IT to whitelist Playwright browser downloads
+
+🔧 Technical Details:
+- Error: ${installError.message}
+- This is likely due to network security policies
+- Contact your IT administrator if the issue persists
+
+💡 Alternative: Try running this on a personal device or ask IT to install Playwright browsers manually.
                     `);
                 }
             } else {

@@ -38,6 +38,14 @@ TROUBLESHOOTING:
 - Make sure emails are @moe.edu.sg format
 - Check that you have SLS admin permissions
 - Ensure stable internet connection (especially for first run)
+
+🏫 SSOE/School Network Issues:
+If browser installation fails on school computers:
+1. Try running as Administrator
+2. Ask IT to whitelist Playwright downloads
+3. Use on personal device instead
+4. Contact IT for manual browser installation
+
 - If browser download fails, you can run: npx playwright install
 
 SYSTEM REQUIREMENTS:
