@@ -1,14 +1,37 @@
 # SLS Playwright Automation - Executable Distribution
 
+## 🚀 Download Latest Version
+
+### Windows Users - Choose Your Version:
+
+#### 🏫 For SSOE/School Networks (Recommended)
+**[📥 Download SSOE Version (868MB)](https://github.com/lookang/playWright/releases/download/SSOE/sls-playwright-automation-win-SSOE.exe)**
+- ✅ **Bundled Chromium browser** - no downloads needed
+- ✅ **Works on restricted networks** - perfect for school computers
+- ✅ **No IT approval required** - completely self-contained
+- ✅ **Eliminates browser errors** - solves "Executable doesn't exist" issues
+
+#### 💻 For Personal/Unrestricted Networks
+**[📥 Download Regular Version (45MB)](https://github.com/lookang/playWright/releases/download/SSOE/sls-playwright-automation-win.exe)**
+- ✅ Smaller download size
+- ✅ Automatic browser installation on first run
+
+### Mac/Linux Users:
+- **[📥 Download macOS Version (59MB)](https://github.com/lookang/playWright/releases/download/SSOE/sls-playwright-automation-macos)**
+- **[📥 Download Linux Version (53MB)](https://github.com/lookang/playWright/releases/download/SSOE/sls-playwright-automation-linux)**
+
+---
+
 ## Quick Start
 
-1. **Create your data file:**
+1. **Download the appropriate version** from the links above
+2. **Create your data file:**
    - Copy `data-sample.csv` to `data.csv`
    - Edit `data.csv` with your teacher email addresses
    - Format: `SerialNo,Email`
 
-2. **Run the automation:**
-   - **Windows:** Double-click `sls-playwright-automation-win.exe`
+3. **Run the automation:**
+   - **Windows:** Double-click the downloaded `.exe` file
    - **macOS:** Double-click `sls-playwright-automation-macos`
    - **Linux:** Run `./sls-playwright-automation-linux` in terminal
 
