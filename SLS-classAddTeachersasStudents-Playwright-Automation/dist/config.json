@@ -1,0 +1,34 @@
+{
+  "urls": {
+    "login": "https://vle.learning.moe.edu.sg/login",
+    "baseClassGroup": "https://vle.learning.moe.edu.sg/class-group/view/"
+  },
+  "selectors": {
+    "editDetailsButton": "//button[normalize-space()='EDIT DETAILS']",
+    "addStudentSpan": "//span[normalize-space()='Add Student']",
+    "teacherAsStudentSpan": "//span[normalize-space()='Teacher as Student']",
+    "schoolInput": "//input[@placeholder='MOE HQ']",
+    "allSchoolsDiv": "//div[@title='All Schools']",
+    "findTeachersInput": "//input[@placeholder='Find Teachers']",
+    "firstCheckbox": "(//div[@class='v-selection-control__input'])[1]",
+    "addButton": "//span[normalize-space()='Add']",
+    "saveButton": "(//*[name()='svg'][@name='Save24'])[1]",
+    "okButton": "//button[normalize-space()='OK']"
+  },
+  "timeouts": {
+    "default": 30000,
+    "navigation": 60000,
+    "search": 10000
+  },
+  "delays": {
+    "afterClick": 1000,
+    "afterType": 500,
+    "afterSearch": 3000
+  },
+  "settings": {
+    "headless": false,
+    "slowMo": 500,
+    "screenshotOnError": true,
+    "maxRetries": 3
+  }
+}

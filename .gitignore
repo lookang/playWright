@@ -2,9 +2,9 @@
 node_modules/
 package-lock.json
 
-# Build output
-dist/
-*.exe
+# Build output (allow dist for distribution)
+# dist/
+# *.exe
 
 # Logs
 logs/*.log
