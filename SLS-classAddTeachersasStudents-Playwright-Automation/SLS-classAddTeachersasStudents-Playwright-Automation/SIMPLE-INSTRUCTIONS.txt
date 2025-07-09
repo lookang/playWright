@@ -1,0 +1,48 @@
+SLS Teacher Addition Automation - SIMPLE VERSION
+===============================================
+
+WHAT THIS DOES:
+Automatically adds teachers as students to your SLS class.
+
+SETUP (2 minutes):
+1. Create your data.csv file:
+   - Copy data-sample.csv to data.csv
+   - Edit data.csv with your teacher emails
+   - Format: SerialNo,Email (emails must be @moe.edu.sg for teachers, @moe.gov.sg for HQ officers)
+
+2. Run the automation:
+   - Windows: Double-click sls-playwright-automation-win.exe
+   - Mac: Double-click sls-playwright-automation-macos
+   - Linux: Double-click sls-playwright-automation-linux
+
+WHAT HAPPENS:
+1. First run: Browser components will be downloaded automatically (one-time setup, ~2-3 minutes)
+2. Browser opens to SLS login page
+3. Login manually, then press Enter in the terminal
+4. Enter your class group ID when prompted
+5. Watch it automatically process your teachers!
+
+FIRST RUN NOTICE:
+⏳ The first time you run this, it will automatically download browser components.
+   This is a one-time setup that takes 2-3 minutes with internet connection.
+   You'll see: "Installing browsers... This is a one-time setup"
+   Just wait for it to complete - no action needed!
+
+EXAMPLE DATA.CSV:
+SerialNo,Email
+1,john.doe@moe.edu.sg
+2,jane.smith@moe.edu.sg
+3,mary.wilson@moe.edu.sg
+
+TROUBLESHOOTING:
+- Make sure emails are @moe.edu.sg format
+- Check that you have SLS admin permissions
+- Ensure stable internet connection (especially for first run)
+- If browser download fails, you can run: npx playwright install
+
+SYSTEM REQUIREMENTS:
+- Internet connection (for first run and SLS access)
+- Windows 10+, macOS 10.14+, or modern Linux
+- No other software installation required!
+
+That's it! The executable handles everything automatically.
