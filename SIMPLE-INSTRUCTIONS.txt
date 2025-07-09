@@ -8,7 +8,7 @@ SETUP (2 minutes):
 1. Create your data.csv file:
    - Copy data-sample.csv to data.csv
    - Edit data.csv with your teacher emails
-   - Format: SerialNo,Email (emails must be @moe.edu.sg)
+   - Format: SerialNo,Email (emails must be @moe.edu.sg for teachers, @moe.gov.sg for HQ officers)
 
 2. Run the automation:
    - Windows: Double-click sls-playwright-automation-win.exe
